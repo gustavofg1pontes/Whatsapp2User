@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.ifsp.whatsapp2user.CreateUserController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.control.Button?>
 
-</AnchorPane>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import impl.org.controlsfx.skin.GridRow?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ifsp.whatsapp2user.controllers.CreateUserController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label alignment="BOTTOM_LEFT">Username:</Label>
+    <TextField fx:id="nameField">
+        <promptText>Username</promptText>
+    </TextField>
+
+
+
+    <Button text="Create User" onAction="#createUser"/>
+</VBox>
