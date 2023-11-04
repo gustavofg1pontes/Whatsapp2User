@@ -8,6 +8,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.ifsp.whatsapp2user.controllers.ChatController">
     <padding>
@@ -18,13 +19,14 @@
         <ScrollPane fitToHeight="true" fitToWidth="true" fx:id="scrollPane" prefHeight="265.0" prefWidth="592.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
             <content>
                 <VBox fx:id="chatScreen" prefHeight="265.0" prefWidth="575.0" />
-            </content></ScrollPane>
+            </content>
+        </ScrollPane>
     </children>
 
-    <children>
-        <TextField fx:id="messageField">
+    <GridPane hgap="5" vgap="1" alignment="CENTER">
+        <TextField fx:id="messageField" GridPane.columnIndex="0" GridPane.columnSpan="3">
             <promptText>Message</promptText>
         </TextField>
-        <Button text="Send message" onAction="#sendMessage"/>
-    </children>
+        <Button text="Send message" onAction="#sendMessage" GridPane.columnIndex="3" GridPane.columnSpan="3"/>
+    </GridPane>
 </VBox>

@@ -33,6 +33,7 @@ public class ChatController {
             SendMessageCommand command = SendMessageCommand.from(messageField.getText());
             out.println(gson.toJson(command));
             addLabel(messageField.getText(), Pos.CENTER_RIGHT);
+            messageField.setText("");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -63,8 +64,17 @@ public class ChatController {
         Text text = new Text(message);
         TextFlow textFlow = new TextFlow(text);
 
-        textFlow.setStyle("-fx-background-color: rgb(233,233,235);" +
-                "-fx-background-radius: 20px");
+        switch (position){
+            case CENTER_LEFT -> {
+                textFlow.setStyle("-fx-background-color: rgb(255,255,255);" +
+                        "-fx-background-radius: 20px");
+            }
+            case CENTER_RIGHT -> {
+                textFlow.setStyle("-fx-background-color: rgb(18, 140, 126);" +
+                        "-fx-background-radius: 20px");
+            }
+        }
+
         textFlow.setPadding(new Insets(5, 10, 5, 10));
 
         hBox.getChildren().add(textFlow);

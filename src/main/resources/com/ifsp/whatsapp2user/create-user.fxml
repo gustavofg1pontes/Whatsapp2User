@@ -8,17 +8,19 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Label?>
 <?import impl.org.controlsfx.skin.GridRow?>
+<?import javafx.scene.layout.GridPane?>
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
       fx:controller="com.ifsp.whatsapp2user.controllers.CreateUserController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <Label alignment="BOTTOM_LEFT">Username:</Label>
-    <TextField fx:id="nameField">
-        <promptText>Username</promptText>
-    </TextField>
-
+    <GridPane vgap="1" hgap="2" alignment="CENTER">
+        <Label alignment="BOTTOM_LEFT" GridPane.columnIndex="0" GridPane.columnSpan="1">Username:</Label>
+        <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.columnSpan="1">
+            <promptText>Username</promptText>
+        </TextField>
+    </GridPane>
 
 
     <Button text="Create User" onAction="#createUser"/>

@@ -1,7 +1,7 @@
 package com.ifsp.whatsapp2user.views;
 
 public enum View {
-    CREATE_USER("create-user.fxml", 320, 240),
+    CREATE_USER("create-user.fxml", 280, 150),
     CHAT("chat.fxml", 400, 400);
 
     private String fileName;
